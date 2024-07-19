@@ -1,0 +1,41 @@
+.DS_Store
+node_modules
+packages/*/dist
+packages/*/coverage
+core/*/dist
+core/*/coverage
+
+# local env files
+.env.local
+.env.*.local
+custom.proxy.js
+custom.proxy
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# yarn 2
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+*.code-workspace

@@ -1,0 +1,56 @@
+{
+  "name": "find-context-injection",
+  "displayName": "Find @alivedise/context Injection",
+  "description": "jump to context provider",
+  "version": "0.0.2",
+  "publisher": "alivedise",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "icon.png",
+  "activationEvents": [
+    "onCommand:extension.findContextInjection"
+  ],
+  "main": "./extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alivedise/vscode-find-context-injection.git"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.findContextInjection",
+        "title": "Find Possible Injection Place of Context API"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "extension.findContextInjection",
+          "group": "navigation",
+          "when": "editorHasSelection"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "pnpm run lint",
+    "build": "pnpm run compile",
+    "compile": "node ./node_modules/vscode/bin/install",
+    "watch": "node ./node_modules/vscode/bin/install -watch -p ./",
+    "test": "pnpm run compile && node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0"
+  }
+}
